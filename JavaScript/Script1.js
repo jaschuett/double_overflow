@@ -1,11 +1,11 @@
 // JavaScript source code
-var power = 1
+var power = 100
 var val = 0;
-var millisecondsToWait = 1000
+var millisecondsToWait = 1000;
 var lamb = 1 / millisecondsToWait
-var intCost = 10
-var powerCost = 10
-function main() {
+var intCost = 100
+var powerCost = 100
+async function main() {
     //exponential distribution
     u = Math.random()
     x = Math.log(1 - u) / (-1 * lamb)
@@ -13,26 +13,32 @@ function main() {
     val += power
 
     document.getElementById('b1').innerHTML = Math.round(val)
-    document.getElementById('bInt').innerHTML = "Upgrade Interval (" + Math.round(intCost) + ")"
-    document.getElementById('bPow').innerHTML = "Upgrade Power (" + Math.round(powerCost) + ")"
+    
+    
 
-    console.log(power)
+    //console.log(power, x)
     setTimeout(main, x)
 }
 
 function upgradeInterval() {
     if (val >= intCost) {
-        millisecondsToWait *= 0.95
+        millisecondsToWait *= 0.99
         lamb = 1 / millisecondsToWait
         val -= intCost
-        intCost *= 1.05
+        intCost *= 1.01
     }
+    document.getElementById('bInt').innerHTML = "Upgrade Interval (Cost: " + Math.round(intCost) + ", current interval: " + Math.round(millisecondsToWait) + " milliseconds)"
+    document.getElementById('b1').innerHTML = Math.round(val)
+    //setTimeout(upgradeInterval)
 }
 
 function upgradePower() {
     if (val >= powerCost) {
-        power *= 1.05
+        power *= 1.01
         val -= powerCost
-        powerCost *= 1.05
+        powerCost *= 1.011
     }
+    document.getElementById('bPow').innerHTML = "Upgrade Power (Cost: " + Math.round(powerCost) + ", current power: " + Math.round(power) + ")"
+    document.getElementById('b1').innerHTML = Math.round(val)
+    //setTimeout(upgradePower)
 }
