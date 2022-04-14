@@ -1,3 +1,3 @@
 # scaling-carnival
-A simple idle game
+A simple clicker game
 https://jaschuett.github.io/scaling-carnival/
