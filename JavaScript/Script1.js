@@ -38,7 +38,7 @@ function upgradePower() {
         val -= powerCost
         powerCost *= 1.02
     }
-    document.getElementById('bPow').innerHTML = "Upgrade Power (Cost: " + Math.round(powerCost) + ", current power: " + Math.round(power) + ")"
+    document.getElementById('bPow').innerHTML = "Upgrade Profit (Cost: " + Math.round(powerCost) + ", current profit: " + Math.round(power) + ")"
     document.getElementById('b1').innerHTML = Math.round(val)
     //setTimeout(upgradePower)
 }
