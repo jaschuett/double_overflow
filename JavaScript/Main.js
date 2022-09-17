@@ -5,12 +5,13 @@ var millisecondsToWait = 1000;
 var lamb = 1 / millisecondsToWait
 var intCost = 100
 var powerCost = 100
+var multCost = 10000
 async function main() {
     //exponential distribution
     u = Math.random()
     x = Math.log(1 - u) / (-1 * lamb)
 
-    val *= power
+    val += power
 
     document.getElementById('b1').innerHTML = Math.round(val)
     setTimeout(main, x)
@@ -36,4 +37,13 @@ function upgradePower() {
     } 
     document.getElementById('bPow').innerHTML = "Upgrade Profit (Cost: " + Math.round(powerCost) + ", current profit: " + Math.round(power) + ")"
     document.getElementById('b1').innerHTML = Math.round(val)
+}
+
+function multiplyPower(){
+	if (val >= multCost){
+		val *= power
+		val -= multCost
+		multCost *= 10000
+		document.getElementById('mult').innerHTML = "Multiply number by Power (Cost: " + multCost + ")"
+	}
 }
