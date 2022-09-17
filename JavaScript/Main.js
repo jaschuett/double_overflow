@@ -29,7 +29,7 @@ function upgradeInterval() {
 }
 
 function upgradeIntervalMax(){
-	while (val >= upgradeInterval){
+	while (val >= intCost){
 		upgradeInterval()
 	}
 }
