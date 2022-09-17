@@ -26,7 +26,12 @@ function upgradeInterval() {
     }
     document.getElementById('bInt').innerHTML = "Upgrade Interval (Cost: " + Math.round(intCost) + ", current interval: " + Math.round(millisecondsToWait) + " milliseconds)"
     document.getElementById('b1').innerHTML = Math.round(val)
-    //setTimeout(upgradeInterval)
+}
+
+function upgradeIntervalMax(){
+	while (val >= upgradeInterval){
+		upgradeInterval()
+	}
 }
 
 function upgradePower() {
@@ -37,6 +42,12 @@ function upgradePower() {
     } 
     document.getElementById('bPow').innerHTML = "Upgrade Profit (Cost: " + Math.round(powerCost) + ", current profit: " + Math.round(power) + ")"
     document.getElementById('b1').innerHTML = Math.round(val)
+}
+
+function upgradePowerMax(){
+	while (val >= powerCost){
+		upgradePower()
+	}
 }
 
 function multiplyPower(){
