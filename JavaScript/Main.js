@@ -38,7 +38,7 @@ function upgradePower() {
     if (val >= powerCost) {
         power *= 1.01
         val -= powerCost
-        powerCost *= 1.02
+        powerCost *= 1.01
     } 
     document.getElementById('bPow').innerHTML = "Upgrade Profit (Cost: " + Math.round(powerCost) + ", current profit: " + Math.round(power) + ")"
     document.getElementById('b1').innerHTML = Math.round(val)
