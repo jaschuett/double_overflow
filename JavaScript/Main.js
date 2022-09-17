@@ -21,7 +21,7 @@ function upgradeInterval() {
         millisecondsToWait *= 0.99
         lamb = 1 / millisecondsToWait
         val -= intCost
-        intCost *= 1.01
+        intCost *= 1.01 
     }
     document.getElementById('bInt').innerHTML = "Upgrade Interval (Cost: " + Math.round(intCost) + ", current interval: " + Math.round(millisecondsToWait) + " milliseconds)"
     document.getElementById('b1').innerHTML = Math.round(val)
