@@ -10,7 +10,7 @@ async function main() {
     u = Math.random()
     x = Math.log(1 - u) / (-1 * lamb)
 
-    val += power
+    val *= power
 
     document.getElementById('b1').innerHTML = Math.round(val)
     setTimeout(main, x)
