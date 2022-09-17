@@ -1,6 +1,6 @@
 // JavaScript source code
 var power = 100
-var val = 0;
+var val = 1;
 var millisecondsToWait = 1000;
 var lamb = 1 / millisecondsToWait
 var intCost = 100
