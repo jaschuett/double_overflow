@@ -13,10 +13,6 @@ async function main() {
     val += power
 
     document.getElementById('b1').innerHTML = Math.round(val)
-    
-    
-
-    //console.log(power, x)
     setTimeout(main, x)
 }
 
@@ -40,5 +36,4 @@ function upgradePower() {
     }
     document.getElementById('bPow').innerHTML = "Upgrade Profit (Cost: " + Math.round(powerCost) + ", current profit: " + Math.round(power) + ")"
     document.getElementById('b1').innerHTML = Math.round(val)
-    //setTimeout(upgradePower)
 }
